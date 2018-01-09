@@ -129,4 +129,26 @@ If required accessing DOM nodes should be done using React's ref Callback Attrib
             </div>
     }
 ```
-Once the component is mounted the callback function will be executed and the reference is ready to be used.
+Once the component is mounted the callback function will be executed and the reference is ready to be used
+
+### Passing campaign data to the component
+
+The data used in the campaigns is accessible as a global object attached to window and can be accessed like this window.campaign_data
+
+**Example**
+```javascript
+<script>
+    window.campaign_data = {
+        words: ['hello', 'kitty']
+    }
+</script>
+
+// The campaign data can be passed to the container like this
+<CampaignContainer data={window.campaign_data} />
+
+// And accessed as properties
+const CampaignContainer = ({data}) => {
+    return <div>{data.words.map(w => w.toUpperCase()).join(' ')}</div>
+}
+```
+This way the campaign data is not hardcoded into the react app's constructor making the app reusable as long as the same data structure is passed into it
