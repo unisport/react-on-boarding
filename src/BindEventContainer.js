@@ -11,14 +11,17 @@ class BindEventContainer extends React.Component {
         this.state = {
             counter: 0
         }
+
+        this.incrementCount = this.incrementCount.bind(this)
+        this.decrementCount = this.decrementCount.bind(this)
     }
 
-    incrementCount = () => {
+    incrementCount(e) {
         let count = this.state.counter
         this.setState({counter: count + 1})
     }
 
-    decrementCount = () => {
+    decrementCount(e) {
         let count = this.state.counter
         this.setState({counter: count - 1})
     }

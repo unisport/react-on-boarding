@@ -3,6 +3,8 @@
 * Stateless app
 * Stateless app with properties
 * Container and component app
+* Event Binding
+* Accessing DOM nodes
 
 ### Simple react app
 
@@ -75,5 +77,7 @@ const KittyComp = ({img}) => (
 )
 ```
 Here the Container has a property called data containing the kitty images. Inside the Component we make use of the constructor to set the application state as well as pick a random image path and pass it to the stateless KittyComponent
+
+### Event Binding
 
 

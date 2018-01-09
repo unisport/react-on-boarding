@@ -21279,23 +21279,28 @@ var BindEventContainer = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (BindEventContainer.__proto__ || Object.getPrototypeOf(BindEventContainer)).call(this, props));
 
-        _this.incrementCount = function () {
-            var count = _this.state.counter;
-            _this.setState({ counter: count + 1 });
-        };
-
-        _this.decrementCount = function () {
-            var count = _this.state.counter;
-            _this.setState({ counter: count - 1 });
-        };
-
         _this.state = {
             counter: 0
         };
+
+        _this.incrementCount = _this.incrementCount.bind(_this);
+        _this.decrementCount = _this.decrementCount.bind(_this);
         return _this;
     }
 
     _createClass(BindEventContainer, [{
+        key: 'incrementCount',
+        value: function incrementCount(e) {
+            var count = this.state.counter;
+            this.setState({ counter: count + 1 });
+        }
+    }, {
+        key: 'decrementCount',
+        value: function decrementCount(e) {
+            var count = this.state.counter;
+            this.setState({ counter: count - 1 });
+        }
+    }, {
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
