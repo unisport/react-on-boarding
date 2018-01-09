@@ -33,7 +33,7 @@ The order in which they are passed is not important, they are passed by name and
 
 We follow the pattern of Containers and Components where it makes sence. Containers should represent your app state and make use of the component lifecycle to handle your app logic, GET data from the backend and POST data to the backend whereas components ...
 
-A simple example of a Container that imports a Component
+An example of a Container that imports a Component
 
 **Example**
 ```javascript
@@ -47,7 +47,7 @@ class Container extends React.Component {
     }
 }
 ```
-A simple example of a Container that has state and imports a Component to display the data
+An example of a Container that has state and imports a Component to display the data
 
 **Example**
 ```javascript
@@ -74,4 +74,6 @@ const KittyComp = ({img}) => (
     <img src={img} />
 )
 ```
+Here the Container has a property called data containing the kitty images. Inside the Component we make use of the constructor to set the application state as well as pick a random image path and pass it to the stateless KittyComponent
+
 
