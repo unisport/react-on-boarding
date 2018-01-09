@@ -29,7 +29,9 @@ const App = ({color, name}) => (
 ```
 The order in which they are passed is not important, they are passed by name and not by order
 
-We follow the pattern of Containers and Components where it makes sence. Containers should represent your app logic and make use of the component lifecycle, GET data from the backend and POST data to the backend whereas components ...
+### Containers and Components
+
+We follow the pattern of Containers and Components where it makes sence. Containers should represent your app state and make use of the component lifecycle to handle your app logic, GET data from the backend and POST data to the backend whereas components ...
 
 A simple example of a Container that imports a Component
 
@@ -44,5 +46,32 @@ class Container extends React.Component {
             </div>
     }
 }
+```
+A simple example of a Container that has state and imports a Component to display the data
+
+**Example**
+```javascript
+class KittySwitcher extends Component {
+
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            data: props.data,
+            randKitty: Math.floor(Math.random() * props.data.length)
+        }
+    }
+
+    render() {
+        return <div>
+                <KittyComp img={ this.state.data[this.state.randKitty] } />
+            </div>
+    }
+}
+
+// Kitty Component
+const KittyComp = ({img}) => (
+    <img src={img} />
+)
 ```
 
