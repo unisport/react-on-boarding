@@ -25,7 +25,13 @@ class BindEventContainer extends React.Component {
         let count = this.state.counter
         this.setState({counter: count - 1})
     }
-
+    // If the arrow function is used the following can be done but it's less
+    // readable for newcomers unfamiliar with this syntax
+    // decrementCount = () => {
+    // }
+    // If you need to pass an extra parameter to the function it can be done like this
+    // <button onClick={this.incrementCount.bind(this, myParam)}></button> and in this
+    // case the binding isn't done in the constructor
     render() {
         return <div>How many kittens do you have {this.state.counter}?
                 <button onClick={this.incrementCount}>+</button>

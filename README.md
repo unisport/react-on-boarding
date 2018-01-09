@@ -80,4 +80,26 @@ Here the Container has a property called data containing the kitty images. Insid
 
 ### Event Binding
 
+When using ES6 when creating a component we follow this pattern for event handling
+
+**Example**
+```javascript
+constructor(props) {
+        super(props)
+
+        this.incrementCount = this.incrementCount.bind(this)
+        this.decrementCount = this.decrementCount.bind(this)
+    }
+
+    incrementCount(e) {
+        // Magic happens
+    }
+
+    decrementCount(e) {
+        // Magic happens
+    }
+    ...
+// Then the eventhandler is added like this
+<button onClick={this.incrementCount}>+</button>
+```
 
