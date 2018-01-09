@@ -6,7 +6,7 @@
 
 ### Simple react app
 
-The simplest version of a React app is simply a function that returns HTML markup, the only requirement is that React has been imported.
+The simplest version of a React app is simply a function that returns HTML markup, the only requirement is that React has been imported
 
 **Example**
 ```javascript
@@ -31,7 +31,7 @@ The order in which they are passed is not important, they are passed by name and
 
 ### Containers and Components
 
-We follow the pattern of Containers and Components where it makes sence. Containers should represent your app state and make use of the component lifecycle to handle your app logic, GET data from the backend and POST data to the backend whereas components ...
+We follow the pattern of Containers and Components where it makes sence. Containers should represent your app state and make use of the component lifecycle to handle your app logic, GET data from the backend and POST data to the backend whereas components more jibber jabber to come
 
 An example of a Container that imports a Component
 
