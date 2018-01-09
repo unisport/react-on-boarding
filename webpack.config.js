@@ -7,7 +7,9 @@ var path = require('path'),
 
 module.exports = {
     entry: {
-        hellokitty: path.join(__dirname, '/src/hellokitty.js')
+        hellokitty: path.join(__dirname, '/src/hellokitty.js'),
+        hello: path.join(__dirname, '/src/hello.js'),
+        container: path.join(__dirname, '/src/container.js')
     },
     output: {
         path: path.join(__dirname, '/dist/js/'),

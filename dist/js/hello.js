@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 31);
+/******/ 	return __webpack_require__(__webpack_require__.s = 32);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -21240,7 +21240,8 @@ module.exports = function() {
 
 
 /***/ }),
-/* 31 */
+/* 31 */,
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21257,20 +21258,28 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 /**
  * A stateless component at it's simplest is just a function
  * returning HTML, just remember to import React otherwise
- * it will not work
+ * it will not work. This component takes a single property called name
+ * and prints it on the screen. You can pass multiple properties by name
+ * the order isn't important
  */
 /**
  * TODO: Describe order of imports
  */
-var App = function App() {
+var App = function App(_ref) {
+  var color = _ref.color,
+      name = _ref.name;
   return _react2.default.createElement(
     'div',
     null,
-    'Hello Kitty!'
+    'Hello ',
+    name,
+    ', you are ',
+    color,
+    '!'
   );
 };
 
-(0, _reactDom.render)(_react2.default.createElement(App, null), document.getElementById('root'));
+(0, _reactDom.render)(_react2.default.createElement(App, { name: 'Pussy', color: 'white' }), document.getElementById('root'));
 
 /***/ })
 /******/ ]);
