@@ -5,6 +5,8 @@
 * Container and component app
 * Event Binding
 * Accessing DOM nodes
+* Async requests
+* Passing campaign data to the component
 
 ### Simple react app
 
@@ -80,11 +82,12 @@ Here the Container has a property called data containing the kitty images. Insid
 
 ### Event Binding
 
-When using ES6 when creating a component we follow this pattern for event handling
+When binding an event to eg a button inside a component we usually follow this pattern
 
 **Example**
 ```javascript
-constructor(props) {
+...
+    constructor(props) {
         super(props)
 
         this.incrementCount = this.incrementCount.bind(this)
@@ -102,4 +105,4 @@ constructor(props) {
 // Then the eventhandler is added like this
 <button onClick={this.incrementCount}>+</button>
 ```
-
+In the above example the element that was clicked can be accessed using the SyntheticMouseEvent passed to the event handler like this e.target
