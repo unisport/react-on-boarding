@@ -1,6 +1,7 @@
 ## React by Example
 
-1. Stateless Hello Kitty 
+* Stateless app
+* Stateless app with properties
 
 ### Simple react app
 
@@ -15,3 +16,14 @@ const App = () => (
 )
 ```
 
+Properties can be passed to components simply by assigning them as you would with HTML tag attributes
+
+** Example **
+```javascript
+const App = ({color, name}) => (
+    <div>Hello {name}, you are {color}!</div>
+)
+
+<App name="Pussy" color="white" />
+```
+The order in which they are passed is not important, they are passed by name and not by order
