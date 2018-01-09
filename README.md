@@ -18,7 +18,7 @@ const App = () => (
 
 Properties can be passed to components simply by assigning them as you would with HTML tag attributes
 
-** Example **
+**Example**
 ```javascript
 const App = ({color, name}) => (
     <div>Hello {name}, you are {color}!</div>
