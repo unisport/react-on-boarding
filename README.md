@@ -106,3 +106,27 @@ When binding an event to eg a button inside a component we usually follow this p
 <button onClick={this.incrementCount}>+</button>
 ```
 In the above example the element that was clicked can be accessed using the SyntheticMouseEvent passed to the event handler like this e.target
+
+### Accessing DOM nodes
+
+If required accessing DOM nodes should be done using React's ref Callback Attribute, once the ref has been setup the DOM node can be manipulated
+
+**Example**
+```javascript
+...
+    componentWillUpdate(nextProps, nextState) {
+        if (nextState.isHappy === true) {
+            this.elm.innerText = 'Happy Kitty'
+        } else {
+            this.elm.innerText = 'Sad Kitty'
+        }
+    }
+
+    render() {
+        return <div>Is it on? {this.state.isHappy ? 'Yes!' : 'No!'}
+                <div ref={(elm) => {this.elm = elm}}>Sad Kitty</div>
+                <button onClick={this.toggle}>Toggle</button>
+            </div>
+    }
+```
+Once the component is mounted the callback function will be executed and the reference is ready to be used.
