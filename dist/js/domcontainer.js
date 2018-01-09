@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 35);
+/******/ 	return __webpack_require__(__webpack_require__.s = 38);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -21244,7 +21244,10 @@ module.exports = function() {
 /* 32 */,
 /* 33 */,
 /* 34 */,
-/* 35 */
+/* 35 */,
+/* 36 */,
+/* 37 */,
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21258,10 +21261,6 @@ var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _KittyComp = __webpack_require__(36);
-
-var _KittyComp2 = _interopRequireDefault(_KittyComp);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -21270,67 +21269,75 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 *
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                *
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 */
 
 
-var KittySwitcher = function (_Component) {
-    _inherits(KittySwitcher, _Component);
+var DOMContainer = function (_React$Component) {
+    _inherits(DOMContainer, _React$Component);
 
-    function KittySwitcher(props) {
-        _classCallCheck(this, KittySwitcher);
+    function DOMContainer(props) {
+        _classCallCheck(this, DOMContainer);
 
-        var _this = _possibleConstructorReturn(this, (KittySwitcher.__proto__ || Object.getPrototypeOf(KittySwitcher)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (DOMContainer.__proto__ || Object.getPrototypeOf(DOMContainer)).call(this, props));
 
         _this.state = {
-            data: props.data,
-            randKitty: Math.floor(Math.random() * props.data.length)
+            isHappy: false
         };
+
+        _this.toggle = _this.toggle.bind(_this);
         return _this;
     }
 
-    _createClass(KittySwitcher, [{
+    _createClass(DOMContainer, [{
+        key: 'toggle',
+        value: function toggle(e) {
+            var ih = this.state.isHappy;
+            if (ih === false) {
+                this.setState({ isHappy: true });
+            } else {
+                this.setState({ isHappy: false });
+            }
+        }
+    }, {
+        key: 'componentWillUpdate',
+        value: function componentWillUpdate(nextProps, nextState) {
+            if (nextState.isHappy === true) {
+                this.elm.innerText = 'Happy Kitty';
+            } else {
+                this.elm.innerText = 'Sad Kitty';
+            }
+        }
+    }, {
         key: 'render',
         value: function render() {
+            var _this2 = this;
+
             return _react2.default.createElement(
                 'div',
                 null,
-                _react2.default.createElement(_KittyComp2.default, { img: this.state.data[this.state.randKitty] })
+                'Is it on? ',
+                this.state.isHappy ? 'Yes!' : 'No!',
+                _react2.default.createElement(
+                    'div',
+                    { ref: function ref(elm) {
+                            _this2.elm = elm;
+                        } },
+                    'Sad Kitty'
+                ),
+                _react2.default.createElement(
+                    'button',
+                    { onClick: this.toggle },
+                    'Toggle'
+                )
             );
         }
     }]);
 
-    return KittySwitcher;
-}(_react.Component);
+    return DOMContainer;
+}(_react2.default.Component);
 
-var kitties = ['https://media.giphy.com/media/LMn7PRCVDcnvO/giphy.gif', 'https://media3.giphy.com/media/IMDSOJvLn9RaU/giphy.gif'];
-
-(0, _reactDom.render)(_react2.default.createElement(KittySwitcher, { data: kitties }), document.getElementById('root'));
-
-/***/ }),
-/* 36 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(6);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var KittyComp = function KittyComp(_ref) {
-  var img = _ref.img;
-  return _react2.default.createElement('img', { src: img });
-}; /**
-    *
-    *
-    */
-exports.default = KittyComp;
+(0, _reactDom.render)(_react2.default.createElement(DOMContainer, null), document.getElementById('root'));
 
 /***/ })
 /******/ ]);

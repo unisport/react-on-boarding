@@ -11,7 +11,8 @@ module.exports = {
         hello: path.join(__dirname, '/src/hello.js'),
         container: path.join(__dirname, '/src/container.js'),
         kittyswitcher: path.join(__dirname, '/src/KittySwitcher.js'),
-        bindeventcontainer: path.join(__dirname, '/src/BindEventContainer.js')
+        bindeventcontainer: path.join(__dirname, '/src/BindEventContainer.js'),
+        domcontainer: path.join(__dirname, '/src/DOMContainer.js')
     },
     output: {
         path: path.join(__dirname, '/dist/js/'),
