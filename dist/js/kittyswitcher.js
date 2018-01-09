@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 33);
+/******/ 	return __webpack_require__(__webpack_require__.s = 35);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -21242,7 +21242,9 @@ module.exports = function() {
 /***/ }),
 /* 31 */,
 /* 32 */,
-/* 33 */
+/* 33 */,
+/* 34 */,
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21256,9 +21258,9 @@ var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Kitty = __webpack_require__(34);
+var _KittyComp = __webpack_require__(36);
 
-var _Kitty2 = _interopRequireDefault(_Kitty);
+var _KittyComp2 = _interopRequireDefault(_KittyComp);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -21271,33 +21273,41 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 */
 
 
-var Container = function (_React$Component) {
-    _inherits(Container, _React$Component);
+var KittySwitcher = function (_Component) {
+    _inherits(KittySwitcher, _Component);
 
-    function Container() {
-        _classCallCheck(this, Container);
+    function KittySwitcher(props) {
+        _classCallCheck(this, KittySwitcher);
 
-        return _possibleConstructorReturn(this, (Container.__proto__ || Object.getPrototypeOf(Container)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (KittySwitcher.__proto__ || Object.getPrototypeOf(KittySwitcher)).call(this, props));
+
+        _this.state = {
+            data: props.data,
+            randKitty: Math.floor(Math.random() * props.data.length)
+        };
+        return _this;
     }
 
-    _createClass(Container, [{
+    _createClass(KittySwitcher, [{
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
                 'div',
                 null,
-                _react2.default.createElement(_Kitty2.default, null)
+                _react2.default.createElement(_KittyComp2.default, { img: this.state.data[this.state.randKitty] })
             );
         }
     }]);
 
-    return Container;
-}(_react2.default.Component);
+    return KittySwitcher;
+}(_react.Component);
 
-(0, _reactDom.render)(_react2.default.createElement(Container, null), document.getElementById('root'));
+var kitties = ['https://media.giphy.com/media/LMn7PRCVDcnvO/giphy.gif', 'https://media3.giphy.com/media/IMDSOJvLn9RaU/giphy.gif'];
+
+(0, _reactDom.render)(_react2.default.createElement(KittySwitcher, { data: kitties }), document.getElementById('root'));
 
 /***/ }),
-/* 34 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21313,13 +21323,14 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Kitty = function Kitty() {
-  return _react2.default.createElement("img", { src: "https://i.giphy.com/media/bcqAMUTUHoLDy/giphy.webp" });
+var KittyComp = function KittyComp(_ref) {
+  var img = _ref.img;
+  return _react2.default.createElement('img', { src: img });
 }; /**
     *
     *
     */
-exports.default = Kitty;
+exports.default = KittyComp;
 
 /***/ })
 /******/ ]);

@@ -9,7 +9,8 @@ module.exports = {
     entry: {
         hellokitty: path.join(__dirname, '/src/hellokitty.js'),
         hello: path.join(__dirname, '/src/hello.js'),
-        container: path.join(__dirname, '/src/container.js')
+        container: path.join(__dirname, '/src/container.js'),
+        kittyswitcher: path.join(__dirname, '/src/KittySwitcher.js')
     },
     output: {
         path: path.join(__dirname, '/dist/js/'),
