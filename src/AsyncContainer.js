@@ -1,5 +1,5 @@
 /**
- *
+ * TODO: Describe POST requests and the use of csrf tokens
  */
 import { render } from 'react-dom'
 import React, { Component } from 'react'

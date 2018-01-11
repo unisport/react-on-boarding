@@ -131,6 +131,36 @@ If required accessing DOM nodes should be done using React's ref Callback Attrib
 ```
 Once the component is mounted the callback function will be executed and the reference is ready to be used
 
+### Async requests
+
+When fetching data from the backend we use axios. It should be the app container that loads the data from the backend using the componentDidMount() lifecycle method
+
+**Example**
+```javascript
+...
+    componentDidMount() {
+        axios.get(this.props.endpoint)
+            .then(resp => this.setState({products: resp.data.products}))
+            .catch(error => console.log(error))
+    }
+// Adding the URL for the backend as a prop makes it easier to reuse the component
+<AsyncContainer endpoint="/sample.json" />
+```
+The data fetched from the endpoint is now available inside the app state using this.state.products and can be used in the application
+
+**Example**
+```javascript
+...
+    render() {
+        let products = this.state.products.map((product, i) =>
+            <Product {...product} key={i} />
+        )
+        return <div>
+                {products}
+            </div>
+    }
+```
+
 ### Passing campaign data to the component
 
 The data used in the campaigns is accessible as a global object attached to window and can be accessed like this window.campaign_data
