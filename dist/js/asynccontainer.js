@@ -21984,6 +21984,8 @@ var AsyncContainer = function (_Component) {
 
             _axios2.default.get(this.props.endpoint).then(function (resp) {
                 return _this2.setState({ products: resp.data.products });
+            }).catch(function (error) {
+                return console.log(error);
             });
         }
     }, {

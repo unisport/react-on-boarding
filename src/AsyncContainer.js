@@ -19,6 +19,7 @@ class AsyncContainer extends Component {
     componentDidMount() {
         axios.get(this.props.endpoint)
             .then(resp => this.setState({products: resp.data.products}))
+            .catch(error => console.log(error))
     }
 
     componentDidCatch(error, info) {
