@@ -13,7 +13,8 @@ module.exports = {
         kittyswitcher: path.join(__dirname, '/src/KittySwitcher.js'),
         bindeventcontainer: path.join(__dirname, '/src/BindEventContainer.js'),
         domcontainer: path.join(__dirname, '/src/DOMContainer.js'),
-        campaigncontainer: path.join(__dirname, '/src/CampaignContainer.js')
+        campaigncontainer: path.join(__dirname, '/src/CampaignContainer.js'),
+        asynccontainer: path.join(__dirname, '/src/AsyncContainer.js')
     },
     output: {
         path: path.join(__dirname, '/dist/js/'),

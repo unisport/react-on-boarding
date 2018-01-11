@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 35);
+/******/ 	return __webpack_require__(__webpack_require__.s = 42);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -21244,7 +21244,14 @@ module.exports = function() {
 /* 32 */,
 /* 33 */,
 /* 34 */,
-/* 35 */
+/* 35 */,
+/* 36 */,
+/* 37 */,
+/* 38 */,
+/* 39 */,
+/* 40 */,
+/* 41 */,
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21258,7 +21265,7 @@ var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _KittyComp = __webpack_require__(36);
+var _KittyComp = __webpack_require__(43);
 
 var _KittyComp2 = _interopRequireDefault(_KittyComp);
 
@@ -21307,7 +21314,7 @@ var kitties = ['https://media.giphy.com/media/LMn7PRCVDcnvO/giphy.gif', 'https:/
 (0, _reactDom.render)(_react2.default.createElement(KittySwitcher, { data: kitties }), document.getElementById('root'));
 
 /***/ }),
-/* 36 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
