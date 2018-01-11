@@ -123,7 +123,7 @@ If required accessing DOM nodes should be done using React's ref Callback Attrib
     }
 
     render() {
-        return <div>Is it on? {this.state.isHappy ? 'Yes!' : 'No!'}
+        return <div>Is it happy? {this.state.isHappy ? 'Yes!' : 'No!'}
                 <div ref={(elm) => {this.elm = elm}}>Sad Kitty</div>
                 <button onClick={this.toggle}>Toggle</button>
             </div>
