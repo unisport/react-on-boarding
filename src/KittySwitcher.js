@@ -1,5 +1,5 @@
 /**
- *
+ * https://github.com/unisport/react-on-boarding#containers-and-components
  */
 import { render } from 'react-dom'
 import React, { Component } from 'react'
