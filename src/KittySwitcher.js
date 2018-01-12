@@ -23,10 +23,12 @@ class KittySwitcher extends Component {
             </div>
     }
 }
-
+/**
+ * Add your favorite kitty pics here
+ */
 const kitties = [
-    'https://media.giphy.com/media/LMn7PRCVDcnvO/giphy.gif',
-    'https://media3.giphy.com/media/IMDSOJvLn9RaU/giphy.gif'
+    '',
+    ''
 ];
 
 render(
