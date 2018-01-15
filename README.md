@@ -107,11 +107,25 @@ When binding an event to eg a button inside a component we usually follow this p
 ```
 In the above example the element that was clicked can be accessed using the SyntheticMouseEvent passed to the event handler like this e.target
 
-In the example above example the button could be a child component with no event handling function, since events bubble up a single event handling function could be implemented, reducing the number of specialised functions
+In the example above the button could be a child component with no event handling function, since events bubble up a single event handling function could be implemented, reducing the number of specialised functions
 
 **Example**
 ```javascript
+const Button = () => <button>Click</button>
+...
+    handleClick(e) {
+        console.log('hello')
+    }
 
+    render() {
+        return <div>How many kittens do you have {this.state.counter}?
+                <div onClick={this.handleClick}>
+                    <Button />
+                </div>
+            </div>
+    }
+```
+Clicking the button will be handled in the parent component
 
 ### Accessing DOM nodes
 
