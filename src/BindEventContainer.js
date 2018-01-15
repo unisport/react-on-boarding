@@ -4,6 +4,8 @@
 import { render } from 'react-dom'
 import React from 'react'
 
+const Button = () => <button>Click</button>
+
 class BindEventContainer extends React.Component {
     constructor(props) {
         super(props)
@@ -25,6 +27,10 @@ class BindEventContainer extends React.Component {
         let count = this.state.counter
         this.setState({counter: count - 1})
     }
+
+    handleClick(e) {
+        console.log('hello')
+    }
     // If the arrow function is used the following can be done but it's less
     // readable for newcomers unfamiliar with this syntax
     // decrementCount = () => {
@@ -36,6 +42,9 @@ class BindEventContainer extends React.Component {
         return <div>How many kittens do you have {this.state.counter}?
                 <button onClick={this.incrementCount}>+</button>
                 <button onClick={this.decrementCount}>-</button>
+                <div onClick={this.handleClick}>
+                    <Button />
+                </div>
             </div>
     }
 }
