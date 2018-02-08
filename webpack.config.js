@@ -14,7 +14,8 @@ module.exports = {
         bindeventcontainer: path.join(__dirname, '/src/BindEventContainer.js'),
         domcontainer: path.join(__dirname, '/src/DOMContainer.js'),
         campaigncontainer: path.join(__dirname, '/src/CampaignContainer.js'),
-        asynccontainer: path.join(__dirname, '/src/AsyncContainer.js')
+        asynccontainer: path.join(__dirname, '/src/AsyncContainer.js'),
+        basicredux: path.join(__dirname, '/src/Basicredux.js')
     },
     output: {
         path: path.join(__dirname, '/dist/js/'),
