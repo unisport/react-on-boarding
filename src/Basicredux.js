@@ -9,7 +9,7 @@ const Main = (props) => <div>Hello</div>
 
 const mapState = (state) => {
     return {
-        food: state.foods
+        foods: state.foods
     }
 }
 
