@@ -7,6 +7,7 @@
 * Accessing DOM nodes
 * Async requests
 * Passing campaign data to the component
+* Redux basic setup
 
 ### Simple react app
 
@@ -202,3 +203,45 @@ const CampaignContainer = ({data}) => {
 }
 ```
 This way the campaign data is not hardcoded into the react app's constructor making the app reusable as long as the same data structure is passed into it
+
+### Redux basic setup
+
+In React each component maintains it's own state which can become difficult to maintain once you move to larger applications. Using Redux the state becomes globally available and can be accessed from any component inside your application. This way you can avoid having to pass state and methods through several layers of components as props.
+
+**Example**
+```javascript
+import React from 'react'
+import { render } from 'react-dom'
+import { Provider, connect } from 'react-redux'
+
+import { store } from './store'
+import { EAT_FOOD } from './actions'
+
+const Main = (props) => <div>Hello</div>
+
+const mapState = (state) => {
+    return {
+        food: state.foods
+    }
+}
+
+const mapDispatch = (dispatch) => {
+    return {
+        eatFood: (food) => dispatch({
+            type: 'EA_FOOD',
+            food
+        })
+    }
+}
+
+const App = connect(mapState,
+    mapDispatch)(Main)
+
+render(
+    <Provider store={ store }>
+        <App />
+    </Provider>,
+    document.getElementById('root')
+)
+```
+
