@@ -228,7 +228,7 @@ const mapState = (state) => {
 const mapDispatch = (dispatch) => {
     return {
         eatFood: (food) => dispatch({
-            type: 'EA_FOOD',
+            type: 'EAT_FOOD',
             food
         })
     }
